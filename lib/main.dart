@@ -34,6 +34,16 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        backgroundColor: Colors.red[100],
+        elevation: 10,
+        width: 200,
+        child: Column(
+          children: [
+            DrawerHeader(child: Text("Login Page by Mustkeem"),)
+          ],
+        ),
+      ),
       appBar: AppBar(
         centerTitle: true,
         title: Text(
@@ -55,11 +65,16 @@ class _MyHomePageState extends State<MyHomePage> {
               Container(
                 margin: EdgeInsets.fromLTRB(20, 50, 20, 30),
                 decoration: BoxDecoration(),
-                child: Text("Enter Your credentials",
-                    style: TextStyle(
-                        fontSize: 30,
-                        fontFamily: "BLUECHERIES",
-                        color: Colors.grey)),
+                child: GestureDetector(
+                  onTap: (){
+                  //  enter your navigation here
+                  },
+                  child: Text("Enter Your credentials",
+                      style: TextStyle(
+                          fontSize: 30,
+                          fontFamily: "BLUECHERIES",
+                          color: Colors.grey)),
+                ),
               ),
               Container(
                 margin: EdgeInsets.fromLTRB(10, 0, 10, 0),
@@ -117,8 +132,10 @@ class _MyHomePageState extends State<MyHomePage> {
                                   ],
                                 ));
                       },
-                      child: Text("Submit")))
+                      child: Text("Submit"))),
+              // ElevatedButton.icon(onPressed: (){}, icon: Image(image: AssetImage("assets/images/lock.png")), label: Text("Submit Alt"))
             ],
+
           ),
         ),
       ),
